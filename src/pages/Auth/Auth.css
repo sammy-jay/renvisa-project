@@ -1,107 +1,205 @@
-.auth{
-    display: grid;
-    grid-template-columns: 300px calc(100% - 300px);
-    height: 100vh;
+.auth {
+  display: grid;
+  grid-template-columns: 300px calc(100% - 300px);
+  height: 100vh;
+  width: 100vw;
 }
-.authSideOne{
-    background-color: #3e87f6;
-    color: #fff;
-    padding: 2rem 2rem 0;
-    max-width: 300px;
+.authSideOne {
+  background-color: #2a286a;
+  color: #fff;
+  padding: 2rem 2rem 0;
+  max-width: 300px;
 }
-.authSideOne h1{
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
-    margin-bottom: 1.5rem;
+.authSideOne h1 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 1.5rem;
 }
 
-.authSideTwo{
-    padding: 3rem 3rem 3rem 5rem;
+.authSideTwo {
+  padding: 2rem 3rem 3rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formers {
+  /* max-width: 500px; */
+}
+.formers h1,
+.formersSpec h1 {
+  color: #2a286a;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.formers label,
+.formersSpec label {
+  color: #2a286a;
+  font-size: 18px;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+.formers input,
+.formersSpec input {
+  width: 100%;
+  background: #f8f8f8;
+  padding: 10px 7px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  color: #444;
+  font-size: 18px;
+  max-width: 500px;
+  border-bottom: 1px solid #cecece;
+}
+.formers div,
+.formersSpec div {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  max-width: 500px;
+}
+.formers button,
+.formersSpec button {
+  margin: 1rem;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  background: #2a286a;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.toggleButtonGroup {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: space-between;
+}
+.toggleButtonGroup .toggleButton {
+  background-color: #fff;
+  width: 123px;
+  height: 111px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 2rem;
+  text-align: center;
+  color: #2a286a;
+  text-transform: none;
+  border: 0.25px solid #2a286a;
+  margin-left: 2rem;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+.formersSpec {
+  max-width: 900px;
+}
+.redText {
+  color: #e04f7e;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.agreement {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #e04f7e;
+}
+@media screen and (max-width: 700px) {
+  .auth {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  .authSideOne {
+    max-width: 100%;
+    overflow-x: scroll;
+    scrollbar-width: 0;
+    padding: 1rem 1rem 2rem;
+  }
+  .auth::-webkit-scrollbar,
+  .authSideOne::-webkit-scrollbar {
+    display: none;
+  }
+  .authSideOne h1 {
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 2.5rem;
+  }
+
+  .authSideTwo {
+    box-sizing: border-box;
+    padding: 4rem 2rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+  }
 
-.formers{
-    max-width: 500px;
-}
-.formers h1 , .formersSpec h1{
-    color: #111;
-    font-size: 47px;
+  .formers h1,
+  .formersSpec h1 {
+    color: #2a286a;
+    font-size: 26px;
     font-weight: 600;
-    margin-bottom: 2rem;
-}
-.formers label , .formersSpec label{
-    color: #7b61ff;
-    font-size: 18px;
+    margin-bottom: 1.5rem;
+  }
+  .formers label,
+  .formersSpec label {
+    color: #2a286a;
+    font-size: 16px;
     font-weight: 400;
     display: block;
     margin-bottom: 0.5rem;
     margin-top: 1.5rem;
-    
-}
-.formers input , .formersSpec input{
+  }
+  .formers input,
+  .formersSpec input {
     width: 100%;
     background: #f8f8f8;
-    padding: 10px 7px ;
+    padding: 8px 5px;
     border: none;
     outline: none;
     border-radius: 3px;
     color: #444;
-    font-size: 18px;
+    font-size: 16px;
     border-bottom: 1px solid #cecece;
-}
-.formers div, .formersSpec div{
+  }
+  .formers div,
+  .formersSpec div {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
-}
-.formers button, .formersSpec button{
+    width: 100%;
+  }
+  .formers button,
+  .formersSpec button {
     margin: 1rem;
     border: none;
     border-radius: 3px;
     color: #fff;
-    background: #3e87f6;
+    background: #2a286a;
     padding: 10px 25px;
     cursor: pointer;
     font-size: 18px;
-}
-.toggleButtonGroup{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    justify-content: space-between;
-}
-.toggleButtonGroup .toggleButton{
-    background-color: #fff;
-    width: 133px;
-    height: 121px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem 2rem;
-    text-align: center;
-    color: #3e87f6;
-    text-transform: none;
-}
-.formersSpec{
-    max-width: 700px;
-    
-}
-.redText{
-    color: #e04f7e;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 30px;
-}
-.agreement{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-      color: #e04f7e;
+  }
+
+  .toggleButtonGroup .toggleButton {
+    width: 93px;
+    height: 81px;
+  }
+  .formersSpec {
+    max-width: 900px;
+  }
 }
