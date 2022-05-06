@@ -8,7 +8,6 @@ import FeaturedListings from "./components/FeaturedListings/FeaturedListings";
 import Footer from "./components/Footer/Footer";
 import SearchSection from "./components/smallerComponents/SearchSection";
 import TopmostNav from "./components/TopmostNav/TopmostNav";
-import "./Home.css";
 
 const Home = () => {
   return (

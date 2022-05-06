@@ -9,11 +9,11 @@
   font-family: Poppins, sans-serif;
 }
 .footer h4 {
-  text-align: right;
-}
-.footer ul {
-  list-style: none;
   text-align: left;
+}
+.footer section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .footer p {
   font-size: 0.9rem;
@@ -23,13 +23,13 @@
   cursor: pointer;
   font-size: 0.85rem;
   display: block;
+  font-size: 0.9rem;
 }
 .footer span:hover {
   transform: translateX(3px);
   color: #2a286a;
 }
 .footer div {
-  width: 240px;
   display: flex;
   flex-direction: column;
   margin: 10px 10px 15px;
@@ -39,10 +39,7 @@
 .footer div * {
   margin-bottom: 10px;
 }
-.footer img {
-  height: 45px;
-  object-fit: contain;
-}
+
 .article {
   display: flex;
   flex-direction: column;
@@ -51,12 +48,13 @@
   align-items: center;
   margin-top: 15px;
 }
-.article div {
-  display: flex;
+.footer input {
+  outline: none;
+  padding: 3px 7px;
 }
-.article div * {
-  margin-right: 10px;
-}
-.footer .spec {
-  width: 200px;
+@media screen and (max-width: 800px) {
+  .footer section {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }

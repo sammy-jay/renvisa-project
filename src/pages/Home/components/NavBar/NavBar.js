@@ -1,34 +1,39 @@
-import React from 'react'
-import './NavBar.css'
-import {BiSearch} from 'react-icons/bi'
-import {GrUser} from 'react-icons/gr'
-import {AiOutlineShoppingCart} from 'react-icons/ai'
-import NavIcon from '../smallerComponents/NavIcon'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./NavBar.css";
+import { BiSearch } from "react-icons/bi";
+import { GrUser } from "react-icons/gr";
+import { IoPower } from "react-icons/io5";
+import NavIcon from "../smallerComponents/NavIcon";
 const NavBar = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/auth");
+  };
   return (
-    <nav className='navbar'>
-        <div>
-            <img src="https://tunatheme.com/tf/react/quarter-preview/quarter/assets/img/logo.png" alt="" />
+    <nav className="navbar">
+      <div>
+        <h2>Renvisa</h2>
+      </div>
+      <div className="navlinks">
+        <ul>
+          <li>Home</li>
+          <li>Our Projects</li>
+          <li>Market Trends</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+      <div className="icons">
+        <NavIcon Icon={BiSearch} />
+        <NavIcon Icon={GrUser} />
+        <div onClick={handleClick}>
+          <NavIcon Icon={IoPower} />
         </div>
-        <div className='navlinks'>
-            <ul>
-                <li>Home</li>
-                <li>Our Projects</li>
-                <li>Our Countries</li>
-                <li>Market Trends</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
-            </ul>
-        </div>
-        <div className='icons'>
-        <NavIcon Icon={BiSearch}/>
-        <NavIcon Icon={GrUser}/>
-        <NavIcon Icon={AiOutlineShoppingCart}/>
-
-        </div>
-        
+      </div>
     </nav>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

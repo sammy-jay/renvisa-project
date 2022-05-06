@@ -8,6 +8,11 @@
 .navbar .navlinks {
   margin-top: 20px;
 }
+.navbar div h2 {
+  color: #0a2c35;
+  font-weight: 700;
+  font-size: 27px;
+}
 .navbar .navlinks ul {
   list-style: none;
 }
