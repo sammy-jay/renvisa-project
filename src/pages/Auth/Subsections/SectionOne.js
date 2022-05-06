@@ -1,15 +1,12 @@
 import "../Auth.css";
 import React, { useState, useEffect } from "react";
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import { useStateValue } from "../StateProvider";
 
 const steps = ["", "", ""];
 
-const SectionOne = () => {
-    const [state, dispatch] = useStateValue();
+const SectionOne = ({ setGlobalIndex, register }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
   const isStepSkipped = (step) => {
@@ -21,10 +18,10 @@ const SectionOne = () => {
       newSkipped = new Set(newSkipped.values());
       newSkipped.delete(activeStep);
     }
-    if (activeStep === 3){
-      dispatch({ type: "CHANGE_INDEX", payload: 1 });
-    }
-    else{
+    if (activeStep === 2) {
+      console.log(setGlobalIndex);
+      setGlobalIndex(1);
+    } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
       setSkipped(newSkipped);
     }
@@ -47,7 +44,7 @@ const SectionOne = () => {
 
           return (
             <Step
-              key={label}
+              key={index}
               {...stepProps}
               className="stepper"
               sx={{ display: "none" }}
@@ -64,7 +61,7 @@ const SectionOne = () => {
           <div className="formers">
             <h1>Where can we reach you?</h1>
             <label htmlFor="phoneNum">Input phone number</label>
-            <input type="text" name="phoneNum" />
+            <input type="text" name="phoneNum" {...register("phoneNum")} />
             <div>
               <button onClick={handleNext}>Next</button>
             </div>
@@ -74,10 +71,10 @@ const SectionOne = () => {
           <div className="formers">
             <h1>What's your name?</h1>
             <label htmlFor="firstName">First Name</label>
-            <input type="text" name="firstName" />
+            <input type="text" name="firstName" {...register("firstName")} />
 
             <label htmlFor="lastName">Last Name</label>
-            <input type="text" name="lastName" />
+            <input type="text" name="lastName" {...register("lastName")} />
             <div>
               <button onClick={handleBack}>Back</button>
               <button onClick={handleNext}>Next</button>
@@ -88,12 +85,11 @@ const SectionOne = () => {
           <div className="formers">
             <h1>Where are you looking to live?</h1>
             <label htmlFor="state">State</label>
-            <input type="text" name="state" />
+            <input type="text" name="state" {...register("state")} />
 
             <label htmlFor="cities">Cities (optional)</label>
-            <input type="text" name="cities" />
+            <input type="text" name="cities" {...register("cities")} />
             <div>
-              <button onClick={handleBack}>Back</button>
               <button onClick={handleNext}>Next</button>
             </div>
           </div>

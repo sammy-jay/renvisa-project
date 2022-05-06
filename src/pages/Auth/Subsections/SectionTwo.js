@@ -4,12 +4,10 @@ import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import { useStateValue } from "../StateProvider";
 
 const steps = ["", "", ""];
 
-const SectionTwo = () => {
-  const [state, dispatch] = useStateValue();
+const SectionTwo = ({ setGlobalIndex, register }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
   const [value, setValue] = useState("Buyers");
@@ -24,8 +22,8 @@ const SectionTwo = () => {
       newSkipped.delete(activeStep);
     }
 
-    if (activeStep === 3) {
-      dispatch({ type: "CHANGE_INDEX", payload: 1 });
+    if (activeStep === 2) {
+      setGlobalIndex(2);
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
       setSkipped(newSkipped);
@@ -49,7 +47,7 @@ const SectionTwo = () => {
 
           return (
             <Step
-              key={label}
+              key={index}
               {...stepProps}
               className="stepper"
               sx={{ display: "none" }}
@@ -129,12 +127,11 @@ const SectionTwo = () => {
           <div className="formers">
             <h1>Are you applying with another person?</h1>
             <label htmlFor="">Co-Buyer's Name</label>
-            <input type="text" name="" />
+            <input type="text" name="" {...register("co-name")} />
 
             <label htmlFor="">Co-Buyer's Email</label>
-            <input type="text" name="" />
+            <input type="text" name="" {...register("co-email")} />
             <div>
-              <button onClick={handleBack}>Back</button>
               <button onClick={handleNext}>Next</button>
             </div>
           </div>

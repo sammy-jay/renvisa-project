@@ -1,7 +1,5 @@
 import "./Auth.css";
 import React, { useState, useEffect } from "react";
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
-
 import SectionOne from "./Subsections/SectionOne";
 import SectionTwo from "./Subsections/SectionTwo";
 import SectionThree from "./Subsections/SectionThree";
@@ -11,14 +9,14 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { loadFull } from "tsparticles";
 import { Particles } from "react-tsparticles";
-import { StateProvider, useStateValue } from "./StateProvider";
+import { useForm } from "react-hook-form";
 
 const steps = ["Step 0", "Step 1", "Step 2", "Step 3"];
 
 const Auth = () => {
-  const { state, dispatch } = useStateValue();
-  console.log(state);
-
+  const { register, setValue, handleSubmit } = useForm();
+  const [globalIndex, setGlobalIndex] = useState(0);
+  console.log(globalIndex);
   const [isVertical, setIsVertical] = useState(true);
   const particlesInit = async (main) => {
     await loadFull(main);
@@ -26,6 +24,10 @@ const Auth = () => {
 
   const particlesLoaded = (container) => {
     // console.log(container);
+  };
+
+  const handleChange = async (data) => {
+    console.log(data);
   };
 
   const handleWidth = () => {};
@@ -47,7 +49,7 @@ const Auth = () => {
         }
       });
     };
-  }, [isVertical]);
+  }, [isVertical, globalIndex]);
 
   return (
     <section className="auth">
@@ -56,7 +58,7 @@ const Auth = () => {
         {isVertical && (
           <Stepper
             className="stepper"
-            activeStep={state?.globalIndex}
+            activeStep={globalIndex}
             orientation="vertical"
           >
             {steps.map((label, index) => {
@@ -87,7 +89,7 @@ const Auth = () => {
         {!isVertical && (
           <Stepper
             className="stepper"
-            activeStep={state?.globalIndex}
+            activeStep={globalIndex}
             orientation="horizontal"
           >
             {steps.map((label, index) => {
@@ -96,7 +98,7 @@ const Auth = () => {
 
               return (
                 <Step
-                  key={label}
+                  key={index}
                   {...stepProps}
                   className="stepper"
                   sx={{
@@ -117,12 +119,30 @@ const Auth = () => {
         )}
       </article>
       <article className="authSideTwo">
-        {state?.globalIndex === 0 && <SectionOne />}
-        {state?.globalIndex === 1 && <SectionTwo />}
-        {state?.globalIndex === 2 && <SectionThree />}
-        {state?.globalIndex === 3 && <SectionFour />}
+        {globalIndex === 0 && (
+          <SectionOne setGlobalIndex={setGlobalIndex} register={register} />
+        )}
+        {globalIndex === 1 && (
+          <SectionTwo setGlobalIndex={setGlobalIndex} register={register} />
+        )}
+        {globalIndex === 2 && (
+          <SectionThree setGlobalIndex={setGlobalIndex} register={register} />
+        )}
+        {globalIndex === 3 && (
+          <SectionFour register={register} setGlobalIndex={setGlobalIndex} />
+        )}
+        {globalIndex === 4 && (
+          <div className="formers">
+            <h1>Thank you for filling out!</h1>
+            <div>
+              <button onClick={handleSubmit(handleChange)}>
+                Complete Process
+              </button>
+            </div>
+          </div>
+        )}
 
-        <Particles
+        {/* <Particles
           id="tsparticles"
           init={particlesInit}
           loaded={particlesLoaded}
@@ -198,7 +218,7 @@ const Auth = () => {
             },
             detectRetina: true,
           }}
-        ></Particles>
+        ></Particles> */}
       </article>
     </section>
   );

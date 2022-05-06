@@ -4,12 +4,10 @@ import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import { useStateValue } from "../StateProvider";
 
 const steps = ["", "", ""];
 
-const SectionThree = () => {
-  const [state, dispatch] = useStateValue();
+const SectionThree = ({ setGlobalIndex, register }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
   const [value, setValue] = useState("Buyers");
@@ -24,8 +22,8 @@ const SectionThree = () => {
       newSkipped.delete(activeStep);
     }
 
-    if (activeStep === 3) {
-      dispatch({ type: "CHANGE_INDEX", payload: 1 });
+    if (activeStep === 2) {
+      setGlobalIndex(3);
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
       setSkipped(newSkipped);
@@ -49,7 +47,7 @@ const SectionThree = () => {
 
           return (
             <Step
-              key={label}
+              key={index}
               {...stepProps}
               className="stepper"
               sx={{ display: "none" }}
@@ -66,12 +64,12 @@ const SectionThree = () => {
           <div className="formers">
             <h1>Where are you currently living?</h1>
             <label htmlFor="">Address</label>
-            <input type="text" name="" />
+            <input type="text" name="" {...register("homeAddress")} />
 
             <label htmlFor="">City</label>
-            <input type="text" name="" />
+            <input type="text" name="" {...register("residingCity")} />
             <label htmlFor="">State</label>
-            <input type="text" name="" />
+            <input type="text" name="" {...register("residingState")} />
             <div>
               <button onClick={handleBack}>Back</button>
               <button onClick={handleNext}>Next</button>
@@ -82,12 +80,12 @@ const SectionThree = () => {
           <div className="formers">
             <h1>What is your current employment status?</h1>
             <label htmlFor="">Employer</label>
-            <input type="text" name="" />
+            <input type="text" name="" {...register("employer")} />
             <label htmlFor="">Title</label>
-            <input type="text" name="" />
+            <input type="text" name="" {...register("jobTitle")} />
 
             <label htmlFor="">Address</label>
-            <input type="text" name="" />
+            <input type="text" name="" {...register("jobAddress")} />
             <div>
               <button onClick={handleBack}>Back</button>
               <button onClick={handleNext}>Next</button>
@@ -123,7 +121,6 @@ const SectionThree = () => {
             </ToggleButtonGroup>
 
             <div>
-              <button onClick={handleBack}>Back</button>
               <button onClick={handleNext}>Next</button>
             </div>
           </div>
