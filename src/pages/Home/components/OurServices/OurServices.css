@@ -1,0 +1,27 @@
+.ourservices {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 3rem;
+  background-color: #f2f6f7;
+  justify-content: center;
+  align-items: center;
+}
+.ourservices .spec {
+  text-transform: capitalize;
+  font-weight: 400;
+  border-radius: 20px;
+  padding: 7px 15px;
+  background-color: #ffefec;
+  color: #2a286a;
+  width: max-content;
+}
+.ourservices h1 {
+  margin: 15px 0;
+  text-transform: capitalize;
+  font-size: 2rem;
+  text-align: center;
+}
+.ourservices div {
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,25 @@
+.aboutchip {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  margin: 10px;
+}
+.aboutchip .icon {
+  width: 40px;
+  height: 40px;
+  background-color: #fef5f4;
+  color: #2a286a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+.aboutchip .icon svg {
+  color: #2a286a;
+  font-size: 22px;
+}
+.aboutchip p {
+  color: #0a2c35;
+  padding-left: 10px;
+  text-transform: capitalize;
+}

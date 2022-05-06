@@ -1,0 +1,29 @@
+.ourtestimonial {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 1rem;
+  background-color: #f8f7fc;
+  justify-content: center;
+  align-items: center;
+}
+.ourtestimonial .spec {
+  text-transform: capitalize;
+  font-weight: 400;
+  border-radius: 20px;
+  padding: 7px 15px;
+  background-color: #ffefec;
+  color: #2a286a;
+  width: max-content;
+}
+.ourtestimonial h1 {
+  margin: 15px 0;
+  text-transform: capitalize;
+  font-size: 2rem;
+  text-align: center;
+}
+.ourtestimonial div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}

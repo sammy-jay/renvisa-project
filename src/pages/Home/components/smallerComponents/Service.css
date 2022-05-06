@@ -1,0 +1,46 @@
+.service {
+  display: flex;
+  width: 250px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  padding: 2rem 2rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  box-shadow: -1px 12px 20px 1px rgba(204, 204, 204, 1);
+  -webkit-box-shadow: -1px 12px 20px 1px rgba(204, 204, 204, 1);
+  -moz-box-shadow: -1px 12px 20px 1px rgba(204, 204, 204, 1);
+  background-color: #fff;
+  cursor: pointer;
+  transition: ease-in-out 0.1s;
+}
+.service:hover {
+  border-bottom-color: #2a286a;
+}
+.service * {
+  margin-bottom: 15px;
+}
+.service img {
+  object-fit: contain;
+}
+.service p {
+  color: #0a2c35;
+  text-align: center;
+}
+.service h6 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.service span {
+  transition: linear 0.2s;
+  color: #5c727d;
+}
+.service span:hover {
+  color: #2a286a;
+  font-weight: 600;
+}
+.service .feedback {
+  border-radius: 100%;
+  height: 70px;
+}

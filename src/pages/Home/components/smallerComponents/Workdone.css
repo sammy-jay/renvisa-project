@@ -1,0 +1,28 @@
+.workdone {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4rem;
+  background-color: #f2f6f7;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.workdone .single {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+}
+.workdone .single svg {
+  font-size: 50px;
+  color: #2a286a;
+}
+.workdone .single h1 {
+  font-size: 3rem;
+}
+.workdone .single p {
+  color: #0a2c35;
+  text-transform: capitalize;
+}
+.single * {
+  margin-bottom: 10px;
+}

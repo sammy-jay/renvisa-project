@@ -1,0 +1,68 @@
+.listing {
+  position: relative;
+  width: 310px;
+  margin: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+.listing:hover {
+  transform: scale(1.005);
+}
+.listing img {
+  height: 235px;
+  width: 310px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+  transition: ease-in-out 0.1s;
+}
+.listing img:hover {
+  transform: scale(1.5);
+}
+.listing .icondiv {
+  display: flex;
+  color: #9ba9af;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0px 7px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #9ba9af;
+  font-size: 0.7rem;
+}
+.listing .icondiv div {
+  display: flex;
+  flex-direction: column;
+  padding: 1px 5px;
+  height: max-content;
+}
+.listing .icondiv .special {
+  border-left: 1px solid #9ba9af;
+  border-right: 1px solid #9ba9af;
+  padding: 0 10px;
+  margin: 0 7px;
+}
+.listing h6 {
+  color: #2a286a;
+}
+.listing h5:hover {
+  color: #2a286a;
+  cursor: pointer;
+}
+.listing .inner {
+  padding: 10px 20px;
+}
+.listing .inner p {
+  font-size: 0.9rem;
+  color: #9ba9af;
+}
+.listing .inner .newdiv {
+  display: flex;
+  margin-top: 15px;
+}
+.listing .inner .newdiv * {
+  margin-right: 5px;
+}

@@ -1,0 +1,65 @@
+.customcarousel{
+    width: 100vw;
+    height: calc(100vh - 170px);
+    background-color: #f2f6f7;
+    position: relative;
+    color: #071c1f;
+    z-index: -1;
+}
+.customcarousel img{
+    height: 60vh;
+    object-fit: contain;
+    margin-top: 100px;
+}
+.customcarousel div{
+    display: flex;
+    justify-content: space-between;
+}
+.customcarousel .contentmanager{
+    display: flex;
+    flex-direction: column;
+    margin: auto 2rem auto 3.5rem;
+    width: max-content;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.customcarousel .contentmanager p{
+    margin: 15px 0;
+}
+.customcarousel .contentmanager h4{
+    font-size: 1.2rem;
+    
+}
+.customcarousel .contentmanager h1{
+    margin: 15px 0;
+    text-transform: capitalize;
+    font-size: 3rem;
+    text-align: left;
+}
+.customcarousel .contentmanager p{
+    border-left: 1px solid #333;
+   color: #0a2c35;
+    letter-spacing: 0.3px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+@media screen and (max-width: 820px) {
+    .customcarousel{
+    height: 70vh
+    }
+    .customcarousel div{
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 2rem auto;
+    }
+    .customcarousel img{
+    height: 30vh;
+     margin-top: 10px;
+     padding-right: -20px;
+    }
+    .customcarousel .contentmanager{
+        width: 70%;
+        padding-top: 1rem;
+    }
+}
