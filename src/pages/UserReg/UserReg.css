@@ -1,0 +1,122 @@
+.userReg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 5rem;
+}
+.userReg_one {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-right: 3rem;
+  padding: 0 2rem;
+}
+.userReg_one .noname {
+  height: 400px;
+  object-fit: contain;
+}
+.userReg_one h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 36px;
+  text-align: center;
+  color: #00378a;
+  margin: 0.5rem 0;
+  text-transform: capitalize;
+}
+.userReg_one p {
+  font-size: 17px;
+  text-align: center;
+  font-weight: 400;
+  color: #00378a;
+  margin: 0.5rem 0;
+}
+.userReg_one .special {
+  font-size: 15px;
+  color: #7f92a4;
+}
+.userReg_one div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userReg_two {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+}
+.userReg_two label {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #7f92a4;
+}
+.userReg_two h1 {
+  font-size: 40px;
+  font-weight: 900;
+  color: #2a286a;
+}
+.userReg_two p {
+  color: #7f92a4;
+  font-size: 14px;
+}
+.userReg_two input {
+  border: 1px solid #e5efff;
+  padding: 7px 7px;
+  border-radius: 5px;
+  outline: none;
+  color: #073763;
+  width: 70%;
+  margin-bottom: 8px;
+}
+.userReg_two form p {
+  font-size: 16px;
+  color: #526475;
+  width: 70%;
+}
+.userReg_two form button {
+  background: #2a286a;
+  border-radius: 6px;
+  width: 70%;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  padding: 6px 7px;
+  border: 0;
+  cursor: pointer;
+  margin: 7px 0 10px;
+}
+.userReg strong {
+  cursor: pointer;
+}
+.userReg strong:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 800px) {
+  .userReg_one {
+    display: none;
+  }
+  .userReg {
+    padding: 3rem 3rem;
+  }
+  .userReg_two {
+    margin-left: 0rem;
+  }
+  .userReg_two input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .userReg_two form p {
+    width: 100%;
+  }
+  .userReg_two form button {
+    width: 100%;
+  }
+}
