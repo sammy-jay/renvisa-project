@@ -1,0 +1,12 @@
+.mainSection {
+  width: 100%;
+  margin-left: 230px;
+  padding: 1rem 2rem 0.5rem;
+}
+@media screen and (max-width: 800px) {
+  .mainSection {
+    width: 100%;
+    margin-left: 60px;
+    padding: 1rem 1rem 0.5rem;
+  }
+}

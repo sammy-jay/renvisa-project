@@ -11,7 +11,7 @@ import { loadFull } from "tsparticles";
 import { Particles } from "react-tsparticles";
 import { useForm } from "react-hook-form";
 
-const steps = ["Step 0", "Step 1", "Step 2", "Step 3"];
+const steps = ["General", "Financials", "Applicants", "Co-Applicant"];
 
 const Auth = () => {
   const { register, setValue, handleSubmit } = useForm();
@@ -142,7 +142,7 @@ const Auth = () => {
           </div>
         )}
 
-        {/* <Particles
+        <Particles
           id="tsparticles"
           init={particlesInit}
           loaded={particlesLoaded}
@@ -218,7 +218,7 @@ const Auth = () => {
             },
             detectRetina: true,
           }}
-        ></Particles> */}
+        ></Particles>
       </article>
     </section>
   );

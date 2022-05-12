@@ -1,0 +1,30 @@
+.navbar__dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar__dashboard h1 {
+  font-size: 30px;
+}
+.navbar__dashboard svg {
+  margin-left: 20px;
+  color: #949391;
+}
+
+@media screen and (max-width: 890px) {
+  .navbar__dashboard .togglebtngrp {
+    display: none;
+  }
+  .navbar__dashboard h1 {
+    font-size: 20px;
+  }
+
+  .navbar__dashboard svg {
+    margin-left: 10px;
+  }
+  .navbar__dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

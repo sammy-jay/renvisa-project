@@ -1,0 +1,33 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  border-top-right-radius: 50px;
+  background: #2a286a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 1.5rem 2.5rem 1rem 1rem;
+  justify-content: space-between;
+  color: #fff;
+  width: 230px;
+}
+.sidebar__biggest {
+  margin-top: 2rem;
+  flex: 1;
+  border-bottom: 1px solid #9598a0;
+  margin-bottom: 2rem;
+}
+.sidebar li {
+  list-style: none;
+}
+@media screen and (max-width: 800px) {
+  .sidebar {
+    border-top-right-radius: 30px;
+    padding: 1.5rem 0.25rem 1rem 0.25rem;
+    width: 60px;
+  }
+  .sidebar h2 {
+    display: none;
+  }
+}
