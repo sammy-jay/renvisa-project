@@ -10,7 +10,11 @@
   margin-left: 20px;
   color: #949391;
 }
-
+@media screen and (max-width: 1150px) {
+  .navbar__dashboard .togglebtngrp {
+    display: none;
+  }
+}
 @media screen and (max-width: 890px) {
   .navbar__dashboard .togglebtngrp {
     display: none;

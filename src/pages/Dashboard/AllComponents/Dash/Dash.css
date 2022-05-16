@@ -1,0 +1,166 @@
+.dash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  margin-top: 4rem;
+}
+
+.dash .dash__sectionOne,
+.dash .dash__sectionTwo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fff 0%, #fff 100%);
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
+  padding: 1rem 1rem;
+}
+
+.dash__sectionOne .dash__sectionOne__articleOne {
+  /* flex: 1.2; */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.dash__sectionOne__articleOne .applicant_card {
+  background-color: rgba(193, 252, 231, 0.35);
+  width: 195px;
+  border-radius: 10px;
+  padding: 20px 15px;
+  height: fit-content;
+  margin-right: 1rem;
+}
+.dash__sectionOne__articleOne .applicant_card h3 {
+  font-size: 14px;
+  color: #404040;
+  font-weight: 900;
+  margin: 0;
+}
+.dash__sectionOne__articleOne .applicant_card p {
+  font-size: 11px;
+  color: #c4c4c4;
+  font-weight: 400;
+  margin: 0;
+}
+.dash__sectionOne__articleOne .applicant_card div {
+  width: 88px;
+  height: 88px;
+  border-radius: 999px;
+  background-color: slateblue;
+  outline: 5px solid #6dcc87;
+  margin: 1rem auto;
+}
+.dash__sectionOne .dash__sectionOne__articleTwo {
+  /* flex: 0.8; */
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 2px solid red; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.dash__sectionOne .dash__sectionOne__articleTwo div {
+  padding: 20px 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* width: 205px; */
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.dash__sectionOne .dash__sectionOne__articleTwo h2,
+.dash__sectionTwo h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26px;
+  color: #464255;
+  text-align: center;
+  margin: 0;
+}
+.dash__sectionOne .dash__sectionOne__articleTwo p {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.51);
+}
+
+.dash .dash__sectionTwo {
+  flex-direction: column;
+  margin-top: 4rem;
+}
+.ttable {
+  color: #c7c7c7;
+  padding: 10px 15px;
+  overflow-x: auto;
+}
+.ttable::-webkit-scrollbar {
+  display: none;
+}
+.ttable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.ttable thead {
+  margin-bottom: 10px;
+}
+.ttable tbody {
+  font-size: 0.85rem;
+}
+.ttable td,
+.ttable th {
+  text-align: left;
+  height: 45px;
+  font-weight: 400;
+  width: max-content;
+  border-bottom: 1px solid #ececec;
+  border-collapse: collapse;
+  padding: 3px;
+}
+
+.arrow svg {
+  color: #404040;
+}
+.ttable span {
+  vertical-align: top;
+}
+
+@media screen and (max-width: 1250px) {
+  .dash .dash__sectionOne {
+    flex-direction: column;
+  }
+  .dash__sectionOne .dash__sectionOne__articleTwo {
+    justify-content: center;
+  }
+  .dash__sectionOne__articleOne {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .dash {
+    margin-top: 1rem;
+  }
+  .dash .dash__sectionOne {
+    flex-direction: column;
+  }
+  .dash__sectionOne .dash__sectionOne__articleOne {
+    flex-direction: column;
+  }
+  .dash__sectionOne__articleOne .applicant_card {
+    margin-bottom: 1.5rem;
+    margin-right: 0rem;
+  }
+  .dash__sectionOne__articleOne .applicant_card,
+  .dash__sectionOne .dash__sectionOne__articleTwo div {
+    width: 100%;
+  }
+  .dash__sectionOne .dash__sectionOne__articleTwo {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

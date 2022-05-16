@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { IoNotificationsOutline } from "react-icons/io5";
@@ -6,13 +6,29 @@ import { BiUserCircle } from "react-icons/bi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Navbar = () => {
+  const [greeting, setGreeting] = useState("");
   const [value, setValue] = useState("Rent");
   const handleChange = (e, newValue) => setValue(newValue);
+
+  const handleGreeting = () => {
+    const date = new Date().getHours();
+    if (date >= 0 && date < 12) {
+      setGreeting("Good Morning");
+    } else if (date >= 12 && date <= 16) {
+      setGreeting("Good Afternoon");
+    } else {
+      setGreeting("Good Evening");
+    }
+  };
+
+  useEffect(() => {
+    handleGreeting();
+  }, []);
 
   return (
     <nav className="navbar__dashboard">
       <div>
-        <h1>Good Morning, Samuel</h1>
+        <h1>{greeting}, Samuel</h1>
       </div>
       <ToggleButtonGroup
         className="togglebtngrp"
